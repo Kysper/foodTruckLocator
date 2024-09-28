@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Truck Finder</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBodsq35koxaH6O12HoPS4otsCaJ2qjsAU&callback=initMap&libraries=places" async defer></script>
+    <script src="map.js" async defer></script>
+    <script src="search.js" defer></script>
+    <script src="truckform.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div id="message"></div>
+    <div id="map" style="height: 700px; width: 100%;"></div>
+
+    <div id="truck-form">
+        <h2>Add Your Food Truck</h2>
+        <form id="truck-form" class="pure-form pure-form-stacked">
+            <label for="truck-name">Truck Name:</label>
+            <input type="text" id="truck-name" name="truck-name" required>
+        
+            <label for="truck-type">Food Type:</label>
+            <select id="truck-type" name="truck-type">
+                <option value="burgers">Burgers</option>
+                <option value="pizza">Pizza</option>
+                <option value="tacos">Tacos</option>
+            </select>
+
+            <button type="submit">Add Truck</button>
+        </form>
+    </div>
+
+    <div id="search-filter" class="pure-g">
+        <div id="search-filter" class="pure-form pure-form-stacked">
+            <input type="text" id="search-input" placeholder="Search by name or type...">
+            <select id="filter-type">
+                <option value="">All Types</option>
+                <option value="burgers">Burgers</option>
+                <option value="pizza">Pizza</option>
+                <option value="tacos">Tacos</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    </div>
+
+    <div id="truck-list">
+        <!-- List of food trucks -->
+    </div>
+</body>
+</html>
